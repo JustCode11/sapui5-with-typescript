@@ -4,22 +4,33 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
 	core:require="{
 		formatter: 'com/myorg/myapp/model/formatter'
-	}">
-
-	<MessagePage
-		title="{i18n>appTitle}"
-		text="{i18n>appTitle}"
-		icon="sap-icon://accept"
+	}"
+>
+	<Page
 		id="page"
-		description="{i18n>appDescription}">
-		<buttons>
-			<Button
-				id="helloButton"
-				text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-				press="sayHello" />
-		</buttons>
-	</MessagePage>
-
+		title="Current Weather"
+	>
+		<content>
+				<Input id="location" change=".locationChange" placeholder="Enter Location" />
+			<form:SimpleForm>
+				<Label text="Place" />
+				<Text text="{/placeName}" />
+				<Label text="Temperature" />
+				<Text text="{/current_weather/temperature} °C" />
+				<Label text="Wind Speed" />
+				<Text text="{/current_weather/windspeed} km/h" />
+				<Label text="Wind Direction" />
+				<Text text="{/current_weather/winddirection} °" />
+			</form:SimpleForm>
+			<FormattedText
+				class="sapUiResponsiveMargin"
+				htmlText="&lt;a href='https://open-meteo.com/'&gt;Weather data by Open-Meteo.com&lt;/a&gt; under &lt;a href='https://creativecommons.org/licenses/by/4.0/'&gt;Attribution 4.0 International (CC BY 4.0)
+					&lt;/a&gt; license"
+			/>
+			<Button text="Dialog öffnen" press="onOpenDialog" />
+		</content>
+	</Page>
 </mvc:View>
