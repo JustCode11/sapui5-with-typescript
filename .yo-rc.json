@@ -1,0 +1,17 @@
+{
+  "generator-ui5-ts-app": {
+    "namespace": "com.myorg.myapp",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.120.1",
+    "author": "Adrian",
+    "initrepo": true,
+    "tstypes": "@sapui5/types",
+    "tstypesVersion": "1.120.1",
+    "appId": "com.myorg.myapp",
+    "appURI": "com/myorg/myapp",
+    "cdnDomain": "ui5.sap.com",
+    "defaultTheme": "sap_horizon",
+    "gte11150": true,
+    "setupCompleted": true
+  }
+}
